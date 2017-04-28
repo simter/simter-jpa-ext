@@ -1,0 +1,55 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>tech.simter</groupId>
+    <artifactId>simter-parent</artifactId>
+    <version>0.3-SNAPSHOT</version>
+    <relativePath></relativePath>
+  </parent>
+  <artifactId>simter-jpa-ext</artifactId>
+  <packaging>jar</packaging>
+  <name>simter-jpa-ext</name>
+  <description>Simter JPA Extensions</description>
+  <url>https://github.com/simter/simter-jpa-ext</url>
+  <licenses>
+    <license>
+      <name>MIT</name>
+      <url>https://opensource.org/licenses/MIT</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <scm>
+    <url>https://github.com/simter/simter-jpa-ext.git</url>
+  </scm>
+  <organization>
+    <name>simter</name>
+    <url>https://github.com/simter</url>
+  </organization>
+  <developers>
+    <developer>
+      <name>RJ Hwang</name>
+      <email>rongjihuang@gmail.com</email>
+    </developer>
+  </developers>
+  <issueManagement>
+    <system>GitHub</system>
+    <url>https://github.com/simter/simter-jpa-ext/issues</url>
+  </issueManagement>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>tech.simter</groupId>
+      <artifactId>simter-core</artifactId>
+    </dependency>
+  </dependencies>
+</project>
