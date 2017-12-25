@@ -4,13 +4,13 @@
   <parent>
     <groupId>tech.simter</groupId>
     <artifactId>simter-parent</artifactId>
-    <version>0.3-SNAPSHOT</version>
-    <relativePath/>
+    <version>${revision}</version>
+    <relativePath>../simter-parent</relativePath>
   </parent>
   <artifactId>simter-jpa-ext</artifactId>
   <packaging>jar</packaging>
   <name>simter-jpa-ext</name>
-  <description>Simter JPA Extensions</description>
+  <description>Simter Jpa Extension</description>
   <url>https://github.com/simter/simter-jpa-ext</url>
   <licenses>
     <license>
@@ -28,7 +28,7 @@
   </organization>
   <developers>
     <developer>
-      <name>RJ Hwang</name>
+      <name>RJ.Hwang</name>
       <email>rongjihuang@gmail.com</email>
     </developer>
   </developers>
