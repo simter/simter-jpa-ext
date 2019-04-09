@@ -50,5 +50,22 @@
       <groupId>tech.simter</groupId>
       <artifactId>simter-core</artifactId>
     </dependency>
+
+    <!-- spring-boot auto config for EclipseLink -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-autoconfigure</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-orm</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.persistence</groupId>
+      <artifactId>org.eclipse.persistence.jpa</artifactId>
+      <optional>true</optional>
+    </dependency>
   </dependencies>
 </project>
