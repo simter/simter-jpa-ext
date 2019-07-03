@@ -1,37 +1,35 @@
 package tech.simter.jpa.ext;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import tech.simter.persistence.CommonState;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.nullValue;
-import static org.junit.Assert.assertThat;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * @author RJ 2017-04-28
+ * @author RJ
  */
-public class CommonStateConverterTest {
+class CommonStateConverterTest {
   @Test
-  public void success() throws Exception {
+  void success() {
     CommonStateConverter c = new CommonStateConverter();
     for (CommonState state : CommonState.values()) {
-      assertThat(c.convertToDatabaseColumn(state), is(state.value()));
-      assertThat(c.convertToEntityAttribute(state.value()), is(state));
+      assertEquals(state.value(), c.convertToDatabaseColumn(state));
+      assertEquals(state, c.convertToEntityAttribute(state.value()));
     }
   }
 
   @Test
-  public void convertNullAttributeValue() throws Exception {
-    assertThat(new CommonStateConverter().convertToDatabaseColumn(null), nullValue());
+  void convertNullAttributeValue() {
+    assertNull(new CommonStateConverter().convertToDatabaseColumn(null));
   }
 
-  @Test(expected = NullPointerException.class)
-  public void convertNullDbValue() throws Exception {
-    new CommonStateConverter().convertToEntityAttribute(null);
+  @Test
+  void convertNullDbValue() {
+    assertThrows(NullPointerException.class, () -> new CommonStateConverter().convertToEntityAttribute(null));
   }
 
-  @Test(expected = IllegalArgumentException.class)
-  public void convertUnsupportedDbValue() throws Exception {
-    new CommonStateConverter().convertToEntityAttribute(9999);
+  @Test
+  void convertUnsupportedDbValue() {
+    assertThrows(IllegalArgumentException.class, () -> new CommonStateConverter().convertToEntityAttribute(9999));
   }
 }

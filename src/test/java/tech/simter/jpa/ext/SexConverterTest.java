@@ -1,37 +1,35 @@
 package tech.simter.jpa.ext;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import tech.simter.persistence.Sex;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.nullValue;
-import static org.junit.Assert.assertThat;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * @author RJ 2017-04-28
+ * @author RJ
  */
-public class SexConverterTest {
+class SexConverterTest {
   @Test
-  public void success() throws Exception {
+  void success() {
     SexConverter c = new SexConverter();
     for (Sex sex : Sex.values()) {
-      assertThat(c.convertToDatabaseColumn(sex), is(sex.value()));
-      assertThat(c.convertToEntityAttribute(sex.value()), is(sex));
+      assertEquals(sex.value(), c.convertToDatabaseColumn(sex));
+      assertEquals(sex, c.convertToEntityAttribute(sex.value()));
     }
   }
 
   @Test
-  public void convertNullAttributeValue() throws Exception {
-    assertThat(new SexConverter().convertToDatabaseColumn(null), nullValue());
+  void convertNullAttributeValue() {
+    assertNull(new SexConverter().convertToDatabaseColumn(null));
   }
 
-  @Test(expected = NullPointerException.class)
-  public void convertNullDbValue() throws Exception {
-    new SexConverter().convertToEntityAttribute(null);
+  @Test
+  void convertNullDbValue() {
+    assertThrows(NullPointerException.class, () -> new SexConverter().convertToEntityAttribute(null));
   }
 
-  @Test(expected = IllegalArgumentException.class)
-  public void convertUnsupportedDbValue() throws Exception {
-    new SexConverter().convertToEntityAttribute(9999);
+  @Test
+  void convertUnsupportedDbValue() {
+    assertThrows(IllegalArgumentException.class, () -> new SexConverter().convertToEntityAttribute(9999));
   }
 }
