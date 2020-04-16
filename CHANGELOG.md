@@ -1,5 +1,9 @@
 # simter-jpa-ext changelog
 
+## 1.2.0-M2 - 2020-04-16
+
+- Upgrade to simter-1.3.0-M14
+
 ## 1.2.0-M1 - 2020-04-09
 
 - Fixed compile error on EclipseLinkJpaConfiguration after upgrade to spring-boot-2.2.5
