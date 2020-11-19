@@ -1,5 +1,9 @@
 # simter-jpa-ext changelog
 
+## 2.0.0 - 2020-11-19
+
+- Upgrade to simter-2.0.0
+
 ## 2.0.0-M1 - 2020-06-02
 
 - Upgrade to simter-2.0.0-M1
