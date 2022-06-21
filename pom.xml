@@ -8,7 +8,7 @@
     <relativePath/>
   </parent>
   <artifactId>simter-jpa-ext</artifactId>
-  <version>2.0.0</version>
+  <version>3.0.0</version>
   <packaging>jar</packaging>
   <name>simter-jpa-ext</name>
   <description>Simter JPA Extension</description>
